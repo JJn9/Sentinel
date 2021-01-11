@@ -1,32 +1,64 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+    <div id="nav-wrapper">
+      <nav class="nav">
+        <div class="nav-item">🚀</div>
+        <router-link to="/" class="title">Sentinel</router-link>
+      </nav>
     </div>
     <router-view />
   </div>
 </template>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+<style lang="scss">
+body,
+html {
+  margin: 0px;
+  padding: 0px;
+  height: 100%;
+  min-height: 100%;
+  min-height: 100vh;
+  background-color: #040d21;
+  a {
+    text-decoration: none;
+    color: #ffffff;
+  }
 }
 
-#nav {
-  padding: 30px;
-}
+#nav-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding: 0 10px 0 10px;
+  height: 60px;
+  // background-color: #1b2037;
+  margin-bottom: 40px;
 
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
+  .nav {
+    display: flex;
+    align-items: center;
+    height: 80%;
+    .title {
+      font-family: "Inconsolata", monospace;
+      display: flex;
+      align-items: center;
+      font-size: 24px;
+      font-weight: bold;
+      height: 100%;
+    }
 
-#nav a.router-link-exact-active {
-  color: #42b983;
+    .nav-item {
+      display: flex;
+      align-items: center;
+      color: #ffffff;
+      margin-right: 10px;
+      height: 100%;
+      border-bottom: 2px solid transparent;
+    }
+    // .router-link-exact-active {
+    //   border-color: #fda05e;
+    // }
+  }
 }
 </style>
