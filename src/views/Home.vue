@@ -1,7 +1,7 @@
 <template>
   <div class="container-fluid">
-    <div class="row center-lg">
-      <div class="col-lg-4">
+    <div class="row center-lg center-md center-sm center-xs">
+      <div class="col">
         <h2 id="main-title">Explore Mars with real-time data.</h2>
       </div>
     </div>
@@ -18,6 +18,7 @@
         laudantium neque dolorum.
       </div>
     </div>
+    <img src="../assets/bubbles.png" id="bubbles" />
   </div>
 </template>
 
@@ -29,14 +30,16 @@ export default {
 
 <style lang="scss" scoped>
 .infos {
+  position: relative;
   display: flex;
   flex-direction: column;
+  z-index: 20;
   .sub-nav {
     justify-content: space-around;
     align-items: center;
     width: 50%;
     height: 40px;
-    background-color: #E4E6F2;
+    background-color: #e4e6f2;
     border-radius: 8px;
     margin-bottom: 30px;
 
@@ -54,8 +57,20 @@ export default {
   }
 }
 
+#bubbles {
+  position: absolute;
+  z-index: 1;
+  top: 40px;
+  left: 50%;
+  transform: translate(-50%);
+  filter: sepia(100%) saturate(0%) brightness(100%) hue-rotate(0deg);
+  opacity: 0.7;
+}
+
 #main-title {
+  position: relative;
   text-align: center;
+  z-index: 20;
   text-transform: uppercase;
   width: 600px;
   background: -webkit-linear-gradient(-70deg, #f9c784, #fda05e);
@@ -66,5 +81,15 @@ export default {
   line-height: 1;
   letter-spacing: -0.025em !important;
   font-size: 64px;
+}
+
+@media screen and (max-width: 840px) {
+  .sub-nav {
+    width: 80% !important;
+  }
+
+  .content {
+    width: 80% !important;
+  }
 }
 </style>
